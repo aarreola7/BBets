@@ -60,28 +60,27 @@ varstor=numeric()
 # In the class and payoff as described  If you highered 40 brownlow substitute teachers to do the same thing that Brownlow did then.
 ## what is their average earnings
 ## the standard deviation and a 95% confidence interval for their earnings?
+
+
+
+
   
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
 
-
-# What are the fair odds? Use manipulation of odds in the function to tune Brownlows earnings to zero. 
-
-
-<!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
-
-
 ```{r}
 
-brownlow <- array(100)
+brownlow <- array(40)
 
-for (i in 1:100) {
+for (i in 1:40) {
 
   brownlow[i] <- BrLw()
 
 }
 
 
+
 ```
+
 
 ```{r}
 
@@ -91,8 +90,26 @@ plot(sorted_brownlow, type = "l", xlab = "Index", ylab = "Value",
 
      main = "Line Plot of Brownlow Numerical Vector")
 
-
 ```
+
+```{r}
+favstats(sorted_brownlow)
+```
+
+The average earnig will be 279 and 95 percent confidence interval is 2 standard deviation above the mean and two standard deviations below the mean. Those numbers are between 225 and 333. 
+
+
+
+# What are the fair odds? Use manipulation of odds in the function to tune Brownlows earnings to zero. 
+
+
+<!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
+
+
+
+
+
+
 
 
 
