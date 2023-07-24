@@ -110,7 +110,7 @@ b_low <- array(100)
 
 for (i in 1:100) {
 
-  b_low[i] <- BrLw(odds=4.39)
+  b_low[i] <- BrLw(odds=4.32)
 
 }
 
@@ -141,23 +141,48 @@ favstats(sorted_b_low)
 
 
 
-
-
-
-
-
 # What size of class makes the 2:1 bet fair?  Use manipulation of number of Students to tune Brownlows earnings to zero.
+
+
+
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
 
 
+```{r}
+
+fair_low <- array(40)
+
+for (i in 1:40) {
+
+  fair_low[i] <- BrLw(numClass =28)
+
+}
 
 
 
+```
+
+
+```{r}
+
+sorted_fair_low <- sort(fair_low)
+
+plot(sorted_fair_low, type = "l", xlab = "Index", ylab = "Value",
+
+     main = "Line Plot of Brownlow Numerical Vector")
+
+```
+
+```{r}
+favstats(sorted_fair_low)
+```
+
+The num class value that worked for me was 28 that was the number that got me closest to 0. 
 
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
-
+In this problem we had to tune our results to get results to zero and get the correct number of students in each class.In this analysis, Professor Brownlow's betting scenario involving matching birthdays in a class is examined using R code and simulations. The function BrLw is used to calculate his earnings based on the default class size of 35 students and odds of 2:1. Over 637 simulations, Brownlow's average earnings are approximately $279, with a 95% confidence interval between $225 and $333. By adjusting the odds to approximately 4.32:1, Brownlow can achieve near-zero average earnings, making the bet fair. Alternatively, a class size of 28 students would also result in a zero-profit scenario with the current 2:1 odds. These findings emphasize the significance of probabilities and fair betting practices.This problem was very difficult to keep up with and understand.
